@@ -1,5 +1,5 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QCheckBox
+from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit
 from PyQt6.QtGui import QPalette, QColor
 
 class Color(QWidget):
@@ -18,24 +18,30 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
 
         self.setWindowTitle("My App")
-        
-        cb = QCheckBox()
 
-        layout = QVBoxLayout()
+        layout1 = QHBoxLayout()
+        layout2 = QVBoxLayout()
+        layout3 = QHBoxLayout()
 
-        layout.addWidget(Color('red'))
-        layout.addWidget(Color('yellow'))
-        layout.addWidget(Color('red'))
-        layout.addWidget(cb)
-        
-        layout2 = QHBoxLayout()
+        layout2.setContentsMargins(0,0,0,0)
+        layout2.setSpacing(20)
+
+        layout1.addWidget(Color('red'))
+        layout1.addWidget(Color('yellow'))
+        layout1.addWidget(Color('purple'))
+
+        layout2.addLayout( layout1 )
+
         layout2.addWidget(Color('green'))
-        layout2.addWidget(Color('white'))
-        layout2.addWidget(Color('green'))
+        layout2.addWidget(Color('pink'))
+
+        layout3.addWidget(Color('red'))
+        layout3.addWidget(Color('purple'))
+
+        layout2.addLayout( layout3 )
 
         widget = QWidget()
-        layout.addLayout(layout2)
-        widget.setLayout(layout)
+        widget.setLayout(layout2)
         self.setCentralWidget(widget)
 
 app = QApplication(sys.argv)

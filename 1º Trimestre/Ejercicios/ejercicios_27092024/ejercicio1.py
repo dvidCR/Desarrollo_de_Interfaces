@@ -1,10 +1,5 @@
-# Ejercicios del 27 de SEPTIEMBRE del 2024
-
-## Ejercicio 1
-
-```python
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QCheckBox
+from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QCheckBox, QPushButton, QRadioButton
 from PyQt6.QtGui import QPalette, QColor
 
 class Color(QWidget):
@@ -23,23 +18,14 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
 
         self.setWindowTitle("My App")
-        
-        cb = QCheckBox()
 
         layout = QVBoxLayout()
 
-        layout.addWidget(Color('red'))
-        layout.addWidget(Color('yellow'))
-        layout.addWidget(Color('red'))
-        layout.addWidget(cb)
-        
-        layout2 = QHBoxLayout()
-        layout2.addWidget(Color('green'))
-        layout2.addWidget(Color('white'))
-        layout2.addWidget(Color('green'))
+        layout.addWidget(QCheckBox())
+        layout.addWidget(QPushButton("Presiona Aqui"))
+        layout.addWidget(QRadioButton())
 
         widget = QWidget()
-        layout.addLayout(layout2)
         widget.setLayout(layout)
         self.setCentralWidget(widget)
 
@@ -48,6 +34,3 @@ window = MainWindow()
 window.show()
 
 app.exec()
-```
-
-!(..\IMG\ejercicio1.png)

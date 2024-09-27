@@ -1,0 +1,53 @@
+# Ejercicios del 27 de SEPTIEMBRE del 2024
+
+## Ejercicio 1
+
+```python
+import sys
+from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QCheckBox
+from PyQt6.QtGui import QPalette, QColor
+
+class Color(QWidget):
+
+    def __init__(self, color):
+        super(Color, self).__init__()
+        self.setAutoFillBackground(True)
+
+        palette = self.palette()
+        palette.setColor(QPalette.ColorRole.Window, QColor(color))
+        self.setPalette(palette)
+
+class MainWindow(QMainWindow):
+
+    def __init__(self):
+        super(MainWindow, self).__init__()
+
+        self.setWindowTitle("My App")
+        
+        cb = QCheckBox()
+
+        layout = QVBoxLayout()
+
+        layout.addWidget(Color('red'))
+        layout.addWidget(Color('yellow'))
+        layout.addWidget(Color('red'))
+        layout.addWidget(cb)
+        
+        layout2 = QHBoxLayout()
+        layout2.addWidget(Color('green'))
+        layout2.addWidget(Color('white'))
+        layout2.addWidget(Color('green'))
+
+        widget = QWidget()
+        layout.addLayout(layout2)
+        widget.setLayout(layout)
+        self.setCentralWidget(widget)
+
+app = QApplication(sys.argv)
+window = MainWindow()
+window.show()
+
+app.exec()
+```
+
+!(..\IMG\ejercicio1.png)

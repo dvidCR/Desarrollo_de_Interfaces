@@ -24,43 +24,55 @@ class MainWindow(QMainWindow):
         self.colors = ["red", "green", "blue", "yellow", "purple", "orange", "pink", "cyan", "magenta", "brown", "gray"]
         self.initialColor = 0
         
-        layoutV = QVBoxLayout()
-        layoutH = QHBoxLayout()
+        self.layout()
+        
+    def layout(self):
+        self.layoutV = QVBoxLayout()
+        self.layoutH = QHBoxLayout()
         
         button1 = QPushButton("Color Random")
         button2 = QPushButton("Cambiar al siguiente color")
         button3 = QPushButton("Cambiar al color anterior")
 
-        layoutV.addWidget(button1)
-        layoutV.addWidget(button2)
-        layoutV.addWidget(button3)
+        self.layoutV.addWidget(button1)
+        self.layoutV.addWidget(button2)
+        self.layoutV.addWidget(button3)
         
         button1.pressed.connect(self.random)
-        button2.pressed.connect(self.changeColor(True))
-        button3.pressed.connect(self.changeColor(False))
+        button2.pressed.connect(lambda: self.changeColor(True))
+        button3.pressed.connect(lambda: self.changeColor(False))
         
-        layoutH.addWidget(Color(self.changeColor(False)))
+        self.mostrarColor = Color(self.colors[self.initialColor])
+        
+        self.layoutH.addWidget(self.mostrarColor)
 
-        layoutV.addItem(layoutH)
+        self.layoutV.addItem(self.layoutH)
         
+        self.widget()
+
+    def widget(self):
         widget = QWidget()
-        widget.setLayout(layoutV)
+        widget.setLayout(self.layoutV)
         self.setCentralWidget(widget)
         
     def random(self):
-        random_color = random.choice(self.colors)
-        return random_color
+        self.layoutH.removeWidget(self.mostrarColor)
+        
+        random_color = random.randint(0, len(self.colors) - 1)
+        self.initialColor = random_color
+        
+        self.layout()
         
     def changeColor(self, advance):
-        cont = 0
+        self.layoutH.removeWidget(self.mostrarColor)
         
         if advance:
-            cont = (self.initialColor + 1) % len(self.colors)  # Avanzar al siguiente color
+            self.initialColor = (self.initialColor + 1) % len(self.colors)
         else:
-            cont = (self.initialColor - 1) % len(self.colors)
-        
-        return self.colors[cont]
-
+            self.initialColor = (self.initialColor - 1) % len(self.colors)
+            
+        self.layout()
+            
 app = QApplication(sys.argv)
 window = MainWindow()
 window.show()

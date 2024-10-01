@@ -41,7 +41,7 @@ window.show()
 app.exec()
 ```
 
-![""](../../IMG/ejercicio1.png)
+![""](IMG/ejercicio1.png)
 
 ## Ejercicio 2
 
@@ -93,7 +93,7 @@ window.show()
 app.exec()
 ```
 
-![""](../../IMG/ejercicio2.png)
+![""](IMG/ejercicio2.png)
 
 ## Ejercicio 3
 
@@ -151,7 +151,7 @@ window.show()
 app.exec()
 ```
 
-![""](../../IMG/ejercicio3.png)
+![""](IMG/ejercicio3.png)
 
 ## Ejercicio 4
 
@@ -197,7 +197,7 @@ window.show()
 app.exec()
 ```
 
-![""](../../IMG/ejercicio4.png)
+![""](IMG/ejercicio4.png)
 
 ## Ejercicio 5
 
@@ -284,4 +284,163 @@ window.show()
 app.exec()
 ```
 
-![""](../../IMG/ejercicio5.png)
+![""](IMG/ejercicio5.png)
+
+## Ejercicio 6
+# Cambia el setCurrentIndex a 1 - ¿Qué ocurre cómo funciona este layout?
+# Cambia el color de amarillo a verde
+
+## Ejercicio 7
+
+```python
+import sys
+import random
+from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QHBoxLayout, QVBoxLayout, QPushButton, QStackedLayout
+from PyQt6.QtGui import QPalette, QColor
+
+class Color(QWidget):
+
+    def __init__(self, color):
+        super(Color, self).__init__()
+        self.setAutoFillBackground(True)
+
+        palette = self.palette()
+        palette.setColor(QPalette.ColorRole.Window, QColor(color))
+        self.setPalette(palette)
+        self.setFixedSize(100,100)
+
+class MainWindow(QMainWindow):
+
+    def __init__(self):
+        super(MainWindow, self).__init__()
+
+        self.setWindowTitle("My App")
+        
+        self.colors = ["red", "green", "blue", "yellow", "purple", "orange", "pink", "cyan", "magenta", "brown", "gray"]
+        self.initialColor = 0
+        
+        self.layout()
+        
+    def layout(self):
+        layout = QStackedLayout()
+        self.layoutV = QVBoxLayout()
+        self.layoutH = QHBoxLayout()
+        
+        button1 = QPushButton("Color Random")
+        button2 = QPushButton("Cambiar al siguiente color")
+        button3 = QPushButton("Cambiar al color anterior")
+        button4 = QPushButton("Boton stacklayout")
+
+        self.layoutV.addWidget(button1)
+        self.layoutV.addWidget(button2)
+        self.layoutV.addWidget(button3)
+        self.layoutV.addWidget(button4)
+        
+        button1.pressed.connect(self.random)
+        button2.pressed.connect(lambda: self.changeColor(True))
+        button3.pressed.connect(lambda: self.changeColor(False))
+        button4.pressed.connect(lambda: layout.setCurrentIndex(random.randint(0, 3)))
+        
+        self.mostrarColor = Color(self.colors[self.initialColor])
+        
+        layout.addWidget(Color("red"))
+        layout.addWidget(Color("green"))
+        layout.addWidget(Color("blue"))
+        layout.addWidget(Color("yellow"))
+
+        layout.setCurrentIndex(3)
+        
+        self.layoutH.addWidget(self.mostrarColor)
+
+        self.layoutV.addItem(self.layoutH)
+        self.layoutV.addItem(layout)
+        
+        self.widget()
+
+    def widget(self):
+        widget = QWidget()
+        widget.setLayout(self.layoutV)
+        self.setCentralWidget(widget)
+        
+    def random(self):
+        self.layoutH.removeWidget(self.mostrarColor)
+        
+        random_color = random.randint(0, len(self.colors) - 1)
+        self.initialColor = random_color
+        
+        self.layout()
+        
+    def changeColor(self, advance):
+        self.layoutH.removeWidget(self.mostrarColor)
+        
+        if advance:
+            self.initialColor = (self.initialColor + 1) % len(self.colors)
+        else:
+            self.initialColor = (self.initialColor - 1) % len(self.colors)
+            
+        self.layout()
+            
+app = QApplication(sys.argv)
+window = MainWindow()
+window.show()
+
+app.exec()
+```
+
+![""](IMG/ejercicio7.png)
+
+## Ejercicio 8
+
+```python
+import sys
+
+from PyQt6.QtWidgets import QApplication, QDialog, QMainWindow, QPushButton, QDialogButtonBox, QVBoxLayout, QLabel
+
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.setWindowTitle("My App")
+
+        button = QPushButton("Press me for a dialog!")
+        button.clicked.connect(self.button_clicked)
+        self.setCentralWidget(button)
+
+    def button_clicked(self, s):
+        print("click", s)
+
+        dlg = CustomDialog()
+        if dlg.exec() == QDialog.DialogCode.Accepted:
+            print("Dialog accepted!")
+        else:
+            print("Dialog rejected!")
+        
+class CustomDialog(QDialog):
+    def __init__(self):
+        super().__init__()
+
+        self.setWindowTitle("HELLO!")
+
+        QBtn = (
+            QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
+        )
+
+        self.buttonBox = QDialogButtonBox(QBtn)
+        self.buttonBox.accepted.connect(self.accept)
+        self.buttonBox.rejected.connect(self.reject)
+
+        layout = QVBoxLayout()
+        message = QLabel("Something happened, is that OK?")
+        layout.addWidget(message)
+        layout.addWidget(self.buttonBox)
+        self.setLayout(layout)
+
+
+app = QApplication(sys.argv)
+window = MainWindow()
+window.show()
+app.exec()
+```
+
+![""](IMG/ejercicio8.png)

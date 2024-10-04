@@ -6,6 +6,8 @@ class Calculadora(QWidget):
     def __init__(self):
         super().__init__()
         
+        self.historial = []
+        
         self.resultado = QLineEdit()
         layout = QGridLayout()
         layout.addWidget(self.resultado, 0, 0, 1, 5)
@@ -35,9 +37,13 @@ class Calculadora(QWidget):
             elif sender.text() == "cls":
                 self.resultado.clear()
             elif sender.text() == "<-":
-                print(self.resultado.text())
+                self.historial.pop()
+                self.resultado.clear()
+                for i in range(0, len(self.historial)):
+                    self.resultado.setText(self.resultado.text() + self.historial[i])
             else:
-                self.resultado.setText(self.resultado.text() + sender.text())
+                self.historial.append(sender.text())
+                self.resultado.setText(self.resultado.text() + self.historial[-1])
         except SyntaxError as e:
             print(e)
         

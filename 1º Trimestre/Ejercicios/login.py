@@ -22,6 +22,12 @@ class Login(QMainWindow):
         
         msgPassw = QLabel("Contraseña:")
         self.inputPassw = QLineEdit()
+        self.inputPassw.setEchoMode(QLineEdit.EchoMode.Password)
+        
+        show = QPushButton("Mostrar")
+        show.setCheckable(True)
+        show.setChecked(True)
+        show.clicked.connect(self.showPass)
         
         login = QPushButton("Iniciar Sesion")
         login.clicked.connect(self.login)
@@ -33,6 +39,7 @@ class Login(QMainWindow):
         
         self.layoutG.addWidget(msgPassw, 2, 0)
         self.layoutG.addWidget(self.inputPassw, 2, 1)
+        self.layoutG.addWidget(show, 2, 2)
         
         self.layoutG.addWidget(login, 3, 1)
         
@@ -44,9 +51,17 @@ class Login(QMainWindow):
             label.setAlignment(Qt.AlignmentFlag.AlignCenter)
             self.setCentralWidget(label)
         else:
-            label = QLabel("Fallo al introducir el usuario o la contraseña")
+            self.inputUser.clear()
+            self.inputPassw.clear()
+            label = QLabel("Usuario o contraseña incorrecto")
             self.layoutG.addWidget(label, 4, 1)
             self.window()
+            
+    def showPass(self, s):
+        if s:
+            self.inputPassw.setEchoMode(QLineEdit.EchoMode.Normal)
+        else:
+            self.inputPassw.setEchoMode(QLineEdit.EchoMode.Password)
         
     def window(self):
         self.layoutG.setAlignment(Qt.AlignmentFlag.AlignCenter)

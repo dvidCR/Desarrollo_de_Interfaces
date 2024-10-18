@@ -1,7 +1,8 @@
 import sys
+from datetime import datetime
 from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QDialog, QCalendarWidget, QVBoxLayout, QComboBox
 from PyQt6.QtGui import QIcon
-from PyQt6.QtCore import QDate
+from PyQt6.QtCore import QDate, QEvent
 
 class MainWindow(QMainWindow):
     
@@ -11,19 +12,18 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Calendario")
         self.setGeometry(100, 100, 600, 400)
         
+        self.date = datetime
         self.widget = QWidget()
         self.calendar = QCalendarWidget(self)
-        self.prueba()
+        self.setCalendar()
         
-    def prueba(self):
-        # setting geometry to the calendar
+    def setCalendar(self):
         self.calendar.setGeometry(10, 10, 400, 250)
- 
-        # date
-        date = QDate(2021, 1, 1)
- 
-        # setting selected date
+        date = QDate(self.date.now().date())
         self.calendar.setSelectedDate(date)
+        
+    def setTask(self):
+        pass
         
         
 if __name__ == "__main__":

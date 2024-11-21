@@ -1,0 +1,10 @@
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PruebaCS\PruebaCS\bin\Debug\PruebaCS.exe.config
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PruebaCS\PruebaCS\bin\Debug\PruebaCS.exe
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PruebaCS\PruebaCS\bin\Debug\PruebaCS.pdb
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PruebaCS\PruebaCS\obj\Debug\PruebaCS.csproj.AssemblyReference.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PruebaCS\PruebaCS\obj\Debug\PruebaCS.Properties.Resources.resources
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PruebaCS\PruebaCS\obj\Debug\PruebaCS.csproj.GenerateResource.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PruebaCS\PruebaCS\obj\Debug\PruebaCS.csproj.CoreCompileInputs.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PruebaCS\PruebaCS\obj\Debug\PruebaCS.exe
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PruebaCS\PruebaCS\obj\Debug\PruebaCS.pdb
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PruebaCS\PruebaCS\obj\Debug\PruebaCS.Form1.resources

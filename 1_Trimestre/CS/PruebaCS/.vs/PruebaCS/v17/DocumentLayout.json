@@ -3,15 +3,15 @@
   "WorkspaceRootPath": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\PruebaCS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{73E90456-EDC0-4380-86FD-DBFA7CB62CFD}|PruebaCS\\PruebaCS.csproj|C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\PruebaCS\\pruebacs\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{73E90456-EDC0-4380-86FD-DBFA7CB62CFD}|PruebaCS\\PruebaCS.csproj|solutionrelative:pruebacs\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{73E90456-EDC0-4380-86FD-DBFA7CB62CFD}|PruebaCS\\PruebaCS.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\pruebacs\\pruebacs\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{73E90456-EDC0-4380-86FD-DBFA7CB62CFD}|PruebaCS\\PruebaCS.csproj|solutionrelative:pruebacs\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{73E90456-EDC0-4380-86FD-DBFA7CB62CFD}|PruebaCS\\PruebaCS.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\pruebacs\\pruebacs\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{73E90456-EDC0-4380-86FD-DBFA7CB62CFD}|PruebaCS\\PruebaCS.csproj|solutionrelative:pruebacs\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{73E90456-EDC0-4380-86FD-DBFA7CB62CFD}|PruebaCS\\PruebaCS.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\pruebacs\\pruebacs\\citas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{73E90456-EDC0-4380-86FD-DBFA7CB62CFD}|PruebaCS\\PruebaCS.csproj|C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\PruebaCS\\pruebacs\\citas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{73E90456-EDC0-4380-86FD-DBFA7CB62CFD}|PruebaCS\\PruebaCS.csproj|solutionrelative:pruebacs\\citas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -39,20 +39,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\PruebaCS\\PruebaCS\\Form1.cs",
               "RelativeDocumentMoniker": "PruebaCS\\Form1.cs",
               "ToolTip": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\PruebaCS\\PruebaCS\\Form1.cs",
               "RelativeToolTip": "PruebaCS\\Form1.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAIAwwCcAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAkwCoAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T19:16:15.788Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\PruebaCS\\PruebaCS\\Form1.cs",
               "RelativeDocumentMoniker": "PruebaCS\\Form1.cs",

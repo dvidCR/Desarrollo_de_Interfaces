@@ -1,0 +1,10 @@
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PicrtureViwer\PicrtureViwer\bin\Debug\PicrtureViwer.exe.config
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PicrtureViwer\PicrtureViwer\bin\Debug\PicrtureViwer.exe
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PicrtureViwer\PicrtureViwer\bin\Debug\PicrtureViwer.pdb
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PicrtureViwer\PicrtureViwer\obj\Debug\PicrtureViwer.csproj.AssemblyReference.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PicrtureViwer\PicrtureViwer\obj\Debug\PicrtureViwer.Form1.resources
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PicrtureViwer\PicrtureViwer\obj\Debug\PicrtureViwer.Properties.Resources.resources
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PicrtureViwer\PicrtureViwer\obj\Debug\PicrtureViwer.csproj.GenerateResource.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PicrtureViwer\PicrtureViwer\obj\Debug\PicrtureViwer.csproj.CoreCompileInputs.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PicrtureViwer\PicrtureViwer\obj\Debug\PicrtureViwer.exe
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\PicrtureViwer\PicrtureViwer\obj\Debug\PicrtureViwer.pdb

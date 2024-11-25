@@ -2,10 +2,8 @@
 
 ## Jugar con la mano
 
-** IMPORTANTE
-** TU ORDENADOR TIENE QUE TENER UNA CÁMARA FUNCIONAL PARA PODER JUGAR A ESTE JUEGO
-
-![""](IMG/handgame.png)
+### **IMPORTANTE**
+### **TU ORDENADOR TIENE QUE TENER UNA CÁMARA FUNCIONAL PARA PODER JUGAR A ESTE JUEGO**
 
 Este juego consiste en controlar la bola con tu mano y esquivar los obstaculos, que cada vez son más rapidos, todo el tiempo que puedas para ir aumentando tu puntuación.
 
@@ -15,10 +13,10 @@ La bola dejara de moverse si has sacado la mano fuera de la vision de la cámara
 
 ## Jugar con la voz
 
-** IMPORTANTE
-** TU ORDENADOR TIENE QUE TENER UN MICRÓFONO FUNCIONAL PARA PODER JUGAR A ESTE JUEGO
+**IMPORTANTE**
 
-![""](IMG/voicegame.png)
+
+**TU ORDENADOR TIENE QUE TENER UN MICRÓFONO FUNCIONAL PARA PODER JUGAR A ESTE JUEGO**
 
 Este juego consiste en controlar la bola moviendola a donde tu le digas.
 
@@ -34,8 +32,10 @@ Tienes que tener en cuenta que una vez que mandes la bola a una dirección, esta
 
 ## Cambiar el color
 
-** IMPORTANTE
-** TU ORDENADOR TIENE QUE TENER UNA CÁMARA FUNCIONAL PARA PODER CAMBIAR EL COLOR DE LA BOLA
+**IMPORTANTE**
+
+
+**TU ORDENADOR TIENE QUE TENER UNA CÁMARA FUNCIONAL PARA PODER CAMBIAR EL COLOR DE LA BOLA**
 
 ![""](IMG/menu.png)
 
@@ -43,20 +43,20 @@ Este opción no es un juego, mediante un código ArUco podras cambiar el color d
 
 Para cambiar el color, tendras que enseñarle uno de estos códigos a la cámara:
 
-### ** ROJO
+### **ROJO**
 !["ROJO"](IMG/rojo.png)
 
-### ** VERDE
+### **VERDE**
 !["VERDE"](IMG/verde.png)
 
-### ** AZUL
+### **AZUL**
 !["AZUL"](IMG/azul.png)
 
-### ** CIAN
+### **CIAN**
 !["CIAN"](IMG/cian.png)
 
-### ** AMARILLO
+### **AMARILLO**
 !["AMARILLO"](IMG/amarillo.png)
 
-### ** MAGENTA
+### **MAGENTA**
 !["MAGENTA"](IMG/magenta.png)

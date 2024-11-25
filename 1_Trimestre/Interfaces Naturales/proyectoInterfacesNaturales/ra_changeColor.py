@@ -79,8 +79,8 @@ class ArucoChangeColor:
                 frame = self.draw_cube(frame, corner, imgpts)
 
                 # Escribir el color del marcador en la imagen
-                cv2.putText(frame, f"Color: {color}", tuple(corner[0][0].astype(int)),
-                            cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2, cv2.LINE_AA)
+                cv2.putText(frame, f"Color no disponible", tuple(corner[0][0].astype(int)),
+                            cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2, cv2.LINE_AA)
 
                 # Detectar un marcador específico y abrir la ventana de Pygame
                 if marker_id >= 1 and marker_id <= 6:  # Aquí puedes cambiar el ID del marcador que abrirá la ventana
@@ -171,9 +171,10 @@ class ArucoChangeColor:
 
             # Muestra la imagen con los marcadores detectados y el cubo
             cv2.imshow('Aruco Change Color', frame)
-
+            
             # Salir con 'q'
-            if cv2.waitKey(1) & 0xFF == ord('q'):
+            key = cv2.waitKey(1) & 0xFF
+            if key == ord('q') or cv2.getWindowProperty('Aruco Change Color', cv2.WND_PROP_VISIBLE) < 1:
                 break
 
         self.cap.release()

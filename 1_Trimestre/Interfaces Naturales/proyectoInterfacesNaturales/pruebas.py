@@ -1,161 +1,101 @@
-import pygame
-import random
-import sys
 import cv2
-import mediapipe as mp
+import numpy as np
 
-# Inicializar Mediapipe y Pygame
-mp_hands = mp.solutions.hands
-hands = mp_hands.Hands(min_detection_confidence=0.7, min_tracking_confidence=0.7)
+class ArucoMarkerDetector:
+    def __init__(self, camera_index=0):
+        # Carga el diccionario de marcadores ArUco
+        self.dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_250)
+        self.parameters = cv2.aruco.DetectorParameters()
+        self.detector = cv2.aruco.ArucoDetector(self.dictionary, self.parameters)
 
-pygame.init()
+        # Configura la cámara
+        self.cap = cv2.VideoCapture(camera_index)
 
-# Configuraciones de la pantalla
-WIDTH, HEIGHT = 800, 600
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Juego de la bola y obstáculos")
-clock = pygame.time.Clock()
+        # Dimensiones de la cámara
+        self.frame_width = int(self.cap.get(3))
+        self.frame_height = int(self.cap.get(4))
 
-# Colores
-WHITE = (255, 255, 255)
-RED = (255, 0, 0)
-BLUE = (0, 0, 255)
-GRAY = (200, 200, 200)
-DARK_GRAY = (100, 100, 100)
+        # Matrices de la cámara y coeficientes de distorsión (ajustados para un uso real)
+        self.camera_matrix = np.array([[self.frame_width, 0, self.frame_width / 2],
+                                       [0, self.frame_height, self.frame_height / 2],
+                                       [0, 0, 1]], dtype="double")
+        self.dist_coeffs = np.zeros((4, 1))  # Asumiendo sin distorsión
 
-# Configuración de la bola
-ball_radius = 20
-ball_pos = [WIDTH // 2, HEIGHT // 2]
+        # Asociar colores a los IDs de los marcadores
+        self.marker_colors = {
+            1: (255, 0, 0),      # Rojo
+            2: (0, 255, 0),      # Verde
+            3: (0, 0, 255),      # Azul
+            4: (255, 255, 0),    # Amarillo
+            5: (0, 255, 255),    # Cian
+            6: (255, 0, 255),    # Magenta
+        }
 
-# Configuración de los obstáculos
-obstacle_width = 50
-obstacle_height = 50
-max_obstacles = 50  # Máximo número de obstáculos
-obstacles = []
+    def draw_cube(self, img, corners, imgpts):
+        imgpts = np.int32(imgpts).reshape(-1, 2)
+        
+        # Conecta las líneas para crear el cubo
+        img = cv2.drawContours(img, [imgpts[:4]], -1, (0, 255, 0), 3)
+        for i, j in zip(range(4), range(4, 8)):
+            img = cv2.line(img, tuple(imgpts[i]), tuple(imgpts[j]), (255), 3)
+        img = cv2.drawContours(img, [imgpts[4:]], -1, (0, 0, 255), 3)
+        return img
 
-# Cámara
-cap = cv2.VideoCapture(0)
+    def process_frame(self):
+        ret, frame = self.cap.read()
+        if not ret:
+            return None  # Retorna None si no se obtiene un frame válido
 
-# Variables del juego
-game_time = 0
-obstacle_speed = 5
+        # Convierte la imagen a escala de grises
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-# Función para generar un obstáculo
-def generate_obstacle():
-    x = WIDTH + random.randint(10, 100)  # Fuera de la pantalla
-    y = random.randint(0, HEIGHT - obstacle_height)
-    return pygame.Rect(x, y, obstacle_width, obstacle_height)
+        # Detecta los marcadores ArUco
+        corners, ids, rejectedImgPoints = cv2.aruco.detectMarkers(gray, self.dictionary, parameters=self.parameters)
 
-# Función para detectar colisiones
-def detect_collision(ball_pos, ball_radius, obstacles):
-    ball_rect = pygame.Rect(ball_pos[0] - ball_radius, ball_pos[1] - ball_radius, ball_radius * 2, ball_radius * 2)
-    for obs in obstacles:
-        if ball_rect.colliderect(obs):
-            return True
-    return False
+        # Si se detectan marcadores
+        if np.all(ids is not None):
+            for i, corner in enumerate(corners):
+                marker_id = ids[i][0]  # Obtén el ID del marcador
+                
+                # Asocia un color al marcador
+                color = self.marker_colors.get(marker_id, (255, 255, 255))  # Color predeterminado: blanco
 
-# Pantalla de Game Over con botones de Reinicio y Salir
-def game_over_screen():
-    while True:
-        screen.fill((0, 0, 0))
-        font = pygame.font.Font(None, 74)
+                # Estima la pose del marcador
+                rvec, tvec, _ = cv2.aruco.estimatePoseSingleMarkers(corner, 5, self.camera_matrix, self.dist_coeffs)
+                (rvec - tvec).any()  # Evita un bug en OpenCV
+                
+                # Dibuja el marcador en la imagen
+                cv2.aruco.drawDetectedMarkers(frame, corners)
 
-        # Texto principal "GAME OVER"
-        text = font.render("GAME OVER", True, RED)
-        screen.blit(text, (WIDTH // 2 - text.get_width() // 2, HEIGHT // 2 - text.get_height() // 2 - 100))
+                # Calcula la proyección de los puntos del cubo
+                axis = np.float32([[0, 0, 0], [0, 5, 0], [5, 5, 0], [5, 0, 0],
+                                   [0, 0, -5], [0, 5, -5], [5, 5, -5], [5, 0, -5]])  # Definir un cubo de 5x5x5 cm
+                imgpts, _ = cv2.projectPoints(axis, rvec, tvec, self.camera_matrix, self.dist_coeffs)
+                frame = self.draw_cube(frame, corner, imgpts)
 
-        # Botón de Reiniciar
-        button_reiniciar = pygame.Rect(WIDTH // 2 - 100, HEIGHT // 2, 200, 50)
-        pygame.draw.rect(screen, GRAY, button_reiniciar)
-        pygame.draw.rect(screen, DARK_GRAY, button_reiniciar, 3)  # Borde
-        reiniciar_text = pygame.font.Font(None, 50).render("Reiniciar", True, (0, 0, 0))
-        screen.blit(reiniciar_text, (button_reiniciar.x + (button_reiniciar.width - reiniciar_text.get_width()) // 2,
-                                     button_reiniciar.y + (button_reiniciar.height - reiniciar_text.get_height()) // 2))
+                # Escribir el color del marcador en la imagen
+                cv2.putText(frame, f"Color: {color}", tuple(corner[0][0].astype(int)),
+                            cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2, cv2.LINE_AA)
 
-        # Botón de Salir
-        button_salir = pygame.Rect(WIDTH // 2 - 100, HEIGHT // 2 + 70, 200, 50)
-        pygame.draw.rect(screen, GRAY, button_salir)
-        pygame.draw.rect(screen, DARK_GRAY, button_salir, 3)  # Borde
-        salir_text = pygame.font.Font(None, 50).render("Salir", True, (0, 0, 0))
-        screen.blit(salir_text, (button_salir.x + (button_salir.width - salir_text.get_width()) // 2,
-                                 button_salir.y + (button_salir.height - salir_text.get_height()) // 2))
+        return frame
 
-        # Actualizar la pantalla
-        pygame.display.flip()
+    def start_detection(self):
+        while True:
+            frame = self.process_frame()
+            if frame is None:
+                break
 
-        # Manejar eventos
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-            elif event.type == pygame.MOUSEBUTTONDOWN:
-                if button_reiniciar.collidepoint(event.pos):  # Clic en "Reiniciar"
-                    return  # Reiniciar el juego
-                elif button_salir.collidepoint(event.pos):  # Clic en "Salir"
-                    pygame.quit()
-                    sys.exit()
+            # Muestra la imagen con los marcadores detectados y el cubo
+            cv2.imshow('Aruco Color Detection', frame)
 
-# Loop principal del juego
-def main():
-    global ball_pos, obstacles, game_time, obstacle_speed
-    running = True
+            # Salir con 'q'
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
 
-    # Reiniciar posiciones
-    ball_pos = [WIDTH // 2, HEIGHT // 2]
-    obstacles.clear()
-    game_time = 0
-    obstacle_speed = 5
+        self.cap.release()
+        cv2.destroyAllWindows()
 
-    while running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-                pygame.quit()
-                sys.exit()
-
-        # Leer la cámara y procesar la posición de la mano
-        success, img = cap.read()
-        if not success:
-            break
-        img = cv2.flip(img, 1)
-        img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        results = hands.process(img_rgb)
-
-        if results.multi_hand_landmarks:
-            for hand_landmarks in results.multi_hand_landmarks:
-                # Obtener el punto del índice (landmark 8)
-                index_finger_tip = hand_landmarks.landmark[8]
-                new_x = int(index_finger_tip.x * WIDTH)
-                new_y = int(index_finger_tip.y * HEIGHT)
-                ball_pos[0] = max(ball_radius, min(WIDTH - ball_radius, new_x))
-                ball_pos[1] = max(ball_radius, min(HEIGHT - ball_radius, new_y))
-
-        # Generar nuevos obstáculos si es necesario
-        if len(obstacles) < max_obstacles and random.random() < 0.05:  # Probabilidad del 5% por frame
-            obstacles.append(generate_obstacle())
-
-        # Mover los obstáculos y eliminarlos si están fuera de la pantalla
-        obstacles = [obs.move(-obstacle_speed, 0) for obs in obstacles if obs.x + obstacle_width > 0]
-
-        # Detectar colisión
-        if detect_collision(ball_pos, ball_radius, obstacles):
-            game_over_screen()
-            return
-
-        # Aumentar la velocidad de los obstáculos con el tiempo
-        game_time += 1
-        if game_time % 500 == 0:  # Incrementar cada 500 frames
-            obstacle_speed += 1
-
-        # Dibujar la pantalla
-        screen.fill(WHITE)
-        pygame.draw.circle(screen, BLUE, ball_pos, ball_radius)
-        for obs in obstacles:
-            pygame.draw.rect(screen, RED, obs)
-
-        pygame.display.flip()
-        clock.tick(60)
-
-# Loop infinito para reiniciar el juego
-while True:
-    main()
+# Si el script se ejecuta directamente
+if __name__ == "__main__":
+    detector = ArucoMarkerDetector()
+    detector.start_detection()

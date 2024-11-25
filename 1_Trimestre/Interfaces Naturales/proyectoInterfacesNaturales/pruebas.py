@@ -20,6 +20,8 @@ clock = pygame.time.Clock()
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
+GRAY = (200, 200, 200)
+DARK_GRAY = (100, 100, 100)
 
 # Configuración de la bola
 ball_radius = 20
@@ -52,23 +54,46 @@ def detect_collision(ball_pos, ball_radius, obstacles):
             return True
     return False
 
-# Pantalla de Game Over con botón de reinicio
+# Pantalla de Game Over con botones de Reinicio y Salir
 def game_over_screen():
     while True:
         screen.fill((0, 0, 0))
         font = pygame.font.Font(None, 74)
+
+        # Texto principal "GAME OVER"
         text = font.render("GAME OVER", True, RED)
-        screen.blit(text, (WIDTH // 2 - text.get_width() // 2, HEIGHT // 2 - text.get_height() // 2 - 50))
-        reiniciar = font.render("Presiona la tecla 'r' para reiniciar", True, RED)
-        screen.blit(reiniciar, (WIDTH - reiniciar.get_width(), HEIGHT - reiniciar.get_height() - 50))
-        
+        screen.blit(text, (WIDTH // 2 - text.get_width() // 2, HEIGHT // 2 - text.get_height() // 2 - 100))
+
+        # Botón de Reiniciar
+        button_reiniciar = pygame.Rect(WIDTH // 2 - 100, HEIGHT // 2, 200, 50)
+        pygame.draw.rect(screen, GRAY, button_reiniciar)
+        pygame.draw.rect(screen, DARK_GRAY, button_reiniciar, 3)  # Borde
+        reiniciar_text = pygame.font.Font(None, 50).render("Reiniciar", True, (0, 0, 0))
+        screen.blit(reiniciar_text, (button_reiniciar.x + (button_reiniciar.width - reiniciar_text.get_width()) // 2,
+                                     button_reiniciar.y + (button_reiniciar.height - reiniciar_text.get_height()) // 2))
+
+        # Botón de Salir
+        button_salir = pygame.Rect(WIDTH // 2 - 100, HEIGHT // 2 + 70, 200, 50)
+        pygame.draw.rect(screen, GRAY, button_salir)
+        pygame.draw.rect(screen, DARK_GRAY, button_salir, 3)  # Borde
+        salir_text = pygame.font.Font(None, 50).render("Salir", True, (0, 0, 0))
+        screen.blit(salir_text, (button_salir.x + (button_salir.width - salir_text.get_width()) // 2,
+                                 button_salir.y + (button_salir.height - salir_text.get_height()) // 2))
+
+        # Actualizar la pantalla
         pygame.display.flip()
+
+        # Manejar eventos
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            elif event.type == pygame.KEYDOWN:
-                return  # Reiniciar el juego
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if button_reiniciar.collidepoint(event.pos):  # Clic en "Reiniciar"
+                    return  # Reiniciar el juego
+                elif button_salir.collidepoint(event.pos):  # Clic en "Salir"
+                    pygame.quit()
+                    sys.exit()
 
 # Loop principal del juego
 def main():
@@ -78,6 +103,8 @@ def main():
     # Reiniciar posiciones
     ball_pos = [WIDTH // 2, HEIGHT // 2]
     obstacles.clear()
+    game_time = 0
+    obstacle_speed = 5
 
     while running:
         for event in pygame.event.get():

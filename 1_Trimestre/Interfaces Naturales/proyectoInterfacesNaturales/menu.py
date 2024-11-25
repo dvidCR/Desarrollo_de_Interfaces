@@ -2,6 +2,7 @@ from handRecognition import HandGame
 from speachRecognition import VoiceGame
 from ra_changeColor import ArucoChangeColor
 import pygame
+import webbrowser
 import sys
 
 class MainMenu:
@@ -126,6 +127,9 @@ class MainMenu:
                             
 
                     if self.button_instructions.collidepoint(event.pos):
-                        print("Instrucciones seleccionado.")
+                        if webbrowser.open:
+                            webbrowser.open_new_tab("https://github.com/dvidCR/Desarrollo_de_Interfaces/blob/main/1_Trimestre/Interfaces%20Naturales/proyectoInterfacesNaturales/README.md")
+                        else:
+                            webbrowser.open("https://github.com/dvidCR/Desarrollo_de_Interfaces/blob/main/1_Trimestre/Interfaces%20Naturales/proyectoInterfacesNaturales/README.md")
 
             self.clock.tick(60)

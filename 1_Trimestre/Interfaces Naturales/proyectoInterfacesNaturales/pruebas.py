@@ -1,101 +1,109 @@
 import cv2
-import numpy as np
-
-class ArucoMarkerDetector:
-    def __init__(self, camera_index=0):
-        # Carga el diccionario de marcadores ArUco
-        self.dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_250)
-        self.parameters = cv2.aruco.DetectorParameters()
-        self.detector = cv2.aruco.ArucoDetector(self.dictionary, self.parameters)
-
-        # Configura la cámara
-        self.cap = cv2.VideoCapture(camera_index)
-
-        # Dimensiones de la cámara
-        self.frame_width = int(self.cap.get(3))
-        self.frame_height = int(self.cap.get(4))
-
-        # Matrices de la cámara y coeficientes de distorsión (ajustados para un uso real)
-        self.camera_matrix = np.array([[self.frame_width, 0, self.frame_width / 2],
-                                       [0, self.frame_height, self.frame_height / 2],
-                                       [0, 0, 1]], dtype="double")
-        self.dist_coeffs = np.zeros((4, 1))  # Asumiendo sin distorsión
-
-        # Asociar colores a los IDs de los marcadores
-        self.marker_colors = {
-            1: (255, 0, 0),      # Rojo
-            2: (0, 255, 0),      # Verde
-            3: (0, 0, 255),      # Azul
-            4: (255, 255, 0),    # Amarillo
-            5: (0, 255, 255),    # Cian
-            6: (255, 0, 255),    # Magenta
-        }
-
-    def draw_cube(self, img, corners, imgpts):
-        imgpts = np.int32(imgpts).reshape(-1, 2)
-        
-        # Conecta las líneas para crear el cubo
-        img = cv2.drawContours(img, [imgpts[:4]], -1, (0, 255, 0), 3)
-        for i, j in zip(range(4), range(4, 8)):
-            img = cv2.line(img, tuple(imgpts[i]), tuple(imgpts[j]), (255), 3)
-        img = cv2.drawContours(img, [imgpts[4:]], -1, (0, 0, 255), 3)
-        return img
-
-    def process_frame(self):
-        ret, frame = self.cap.read()
+import speech_recognition as sr
+import pyttsx3
+from transformers import pipeline
+import os
+ 
+class SistemaDeteccion:
+    def __init__(self):
+        # Inicializar síntesis de voz
+        self.engine = pyttsx3.init()
+        # Iniciar reconocimiento por voz
+        self.reconocedor = sr.Recognizer()
+        # Cargar el modelo de IA
+        self.modeloIA = self.cargarModeloIA()
+        # Activae la camara
+        self.camara = cv2.VideoCapture(0)
+        # Dar nombre al archivo que se creara cuando se haga una imagen
+        self.nombreImagen = "captura.jpg"
+        # El sistema esta completamente iniciado y se inicia
+        self.hablar("Sistema iniciado. Di '¿Qué ves?' para analizar la imagen o 'salir' para salir.")
+ 
+    def cargarModeloIA(self):
+        """Carga el modelo de IA para detección de objetos."""
+        print("Cargando el modelo de detección de objetos...")
+        return pipeline("object-detection", model="facebook/detr-resnet-50")
+ 
+    def hablar(self, mensaje):
+        """Convierte texto en voz."""
+        self.engine.say(mensaje)
+        self.engine.runAndWait()
+ 
+    def escucharComando(self):
+        """Escucha un comando de voz y lo devuelve como texto."""
+        with sr.Microphone() as source:
+            print("Escuchando...")
+            try:
+                audio = self.reconocedor.listen(source)
+                comando = self.reconocedor.recognize_google(audio, language="es-ES")
+                return comando.lower()
+            except sr.UnknownValueError:
+                self.hablar("No he podido oirte bien.")
+                return None
+            except sr.RequestError:
+                self.hablar("Error en el servicio de reconocimiento de voz.")
+                return None
+ 
+    def analizarImagen(self):
+        """Captura una imagen, la analiza y describe los objetos detectados."""
+        ret, frame = self.camara.read()
         if not ret:
-            return None  # Retorna None si no se obtiene un frame válido
-
-        # Convierte la imagen a escala de grises
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
-        # Detecta los marcadores ArUco
-        corners, ids, rejectedImgPoints = cv2.aruco.detectMarkers(gray, self.dictionary, parameters=self.parameters)
-
-        # Si se detectan marcadores
-        if np.all(ids is not None):
-            for i, corner in enumerate(corners):
-                marker_id = ids[i][0]  # Obtén el ID del marcador
-                
-                # Asocia un color al marcador
-                color = self.marker_colors.get(marker_id, (255, 255, 255))  # Color predeterminado: blanco
-
-                # Estima la pose del marcador
-                rvec, tvec, _ = cv2.aruco.estimatePoseSingleMarkers(corner, 5, self.camera_matrix, self.dist_coeffs)
-                (rvec - tvec).any()  # Evita un bug en OpenCV
-                
-                # Dibuja el marcador en la imagen
-                cv2.aruco.drawDetectedMarkers(frame, corners)
-
-                # Calcula la proyección de los puntos del cubo
-                axis = np.float32([[0, 0, 0], [0, 5, 0], [5, 5, 0], [5, 0, 0],
-                                   [0, 0, -5], [0, 5, -5], [5, 5, -5], [5, 0, -5]])  # Definir un cubo de 5x5x5 cm
-                imgpts, _ = cv2.projectPoints(axis, rvec, tvec, self.camera_matrix, self.dist_coeffs)
-                frame = self.draw_cube(frame, corner, imgpts)
-
-                # Escribir el color del marcador en la imagen
-                cv2.putText(frame, f"Color: {color}", tuple(corner[0][0].astype(int)),
-                            cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2, cv2.LINE_AA)
-
-        return frame
-
-    def start_detection(self):
+            self.hablar("No se pudo acceder a la cámara.")
+            return
+ 
+        # Guardar la imagen capturada
+        cv2.imwrite(self.nombreImagen, frame)
+ 
+        # Usar el modelo de IA para detectar objetos
+        try:
+            detecciones = self.modeloIA(self.nombreImagen)
+            objetos_detectados = [
+                (obj["label"], int(obj["score"] * 100)) for obj in detecciones if obj["score"] > 0.5
+            ]
+        except Exception as e:
+            self.hablar("Error al analizar la imagen.")
+            print("Error:", e)
+            return
+ 
+        # Dice los objetos detectados en la imagen analizada
+        if objetos_detectados:
+            for objeto, probabilidad in objetos_detectados:
+                self.hablar(f"Veo un {objeto} con una probabilidad del {probabilidad} por ciento.")
+        else:
+            self.hablar("No detecto objetos relevantes en la imagen.")
+ 
+    def eliminarImagen(self):
+        """Elimina la imagen capturada si existe."""
+        if os.path.exists(self.nombreImagen):
+            os.remove(self.nombreImagen)
+            print(f"Imagen '{self.nombreImagen}' eliminada.")
+ 
+    def ejecutar(self):
+        """Ejecuta el sistema en un bucle principal."""
         while True:
-            frame = self.process_frame()
-            if frame is None:
+            comando = self.escucharComando()
+            if not comando:
+                continue
+ 
+            if "que ves" in comando or "qué ves" in comando or "que vez" in comando:
+                self.analizarImagen()
+            elif "salir" in comando:
+                self.hablar("Saliendo del programa. Adiós.")
                 break
-
-            # Muestra la imagen con los marcadores detectados y el cubo
-            cv2.imshow('Aruco Color Detection', frame)
-
-            # Salir con 'q'
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
-
-        self.cap.release()
+            else:
+                self.hablar("No te entiendo.")
+ 
+        # Limpiar recursos
+        self.limpiar()
+ 
+    # Liberar recursos abiertos
+    def limpiar(self):
+        """Libera los recursos utilizados."""
+        self.camara.release()
         cv2.destroyAllWindows()
-
-# Si el script se ejecuta directamente
+        self.eliminarImagen()
+ 
+ 
 if __name__ == "__main__":
-    detector = ArucoMarkerDetector()
-    detector.start_detection()
+    sistema = SistemaDeteccion()
+    sistema.ejecutar()

@@ -1,0 +1,11 @@
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Formulario\Formulario\bin\Debug\Formulario.exe.config
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Formulario\Formulario\bin\Debug\Formulario.exe
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Formulario\Formulario\bin\Debug\Formulario.pdb
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Formulario\Formulario\obj\Debug\Formulario.csproj.AssemblyReference.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Formulario\Formulario\obj\Debug\Formulario.Form1.resources
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Formulario\Formulario\obj\Debug\Formulario.Properties.Resources.resources
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Formulario\Formulario\obj\Debug\Formulario.csproj.GenerateResource.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Formulario\Formulario\obj\Debug\Formulario.csproj.CoreCompileInputs.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Formulario\Formulario\obj\Debug\Formulario.exe
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Formulario\Formulario\obj\Debug\Formulario.pdb
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Formulario\Formulario\obj\Debug\Formulario.Form2.resources

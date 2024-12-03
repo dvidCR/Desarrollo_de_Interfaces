@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{D6A14DD1-5B22-4BDF-B886-BFAFFF7F8DE7}|PicrtureViwer\\PicrtureViwer.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\picrtureviwer\\picrtureviwer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D6A14DD1-5B22-4BDF-B886-BFAFFF7F8DE7}|PicrtureViwer\\PicrtureViwer.csproj|solutionrelative:picrtureviwer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6A14DD1-5B22-4BDF-B886-BFAFFF7F8DE7}|PicrtureViwer\\PicrtureViwer.csproj|C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\PicrtureViwer\\picrtureviwer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6A14DD1-5B22-4BDF-B886-BFAFFF7F8DE7}|PicrtureViwer\\PicrtureViwer.csproj|solutionrelative:picrtureviwer\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\PicrtureViwer\\PicrtureViwer\\Form1.cs",
+              "RelativeDocumentMoniker": "PicrtureViwer\\Form1.cs",
+              "ToolTip": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\PicrtureViwer\\PicrtureViwer\\Form1.cs",
+              "RelativeToolTip": "PicrtureViwer\\Form1.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAiwDMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T18:28:18.284Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,

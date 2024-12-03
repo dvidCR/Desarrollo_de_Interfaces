@@ -1,0 +1,103 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\formulario\\formulario\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|solutionrelative:formulario\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\formulario\\formulario\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|solutionrelative:formulario\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\formulario\\formulario\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|solutionrelative:formulario\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\formulario\\formulario\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|solutionrelative:formulario\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\formulario\\formulario\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|solutionrelative:formulario\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form2.Designer.cs",
+              "DocumentMoniker": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\Formulario\\Form2.Designer.cs",
+              "RelativeDocumentMoniker": "Formulario\\Form2.Designer.cs",
+              "ToolTip": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\Formulario\\Form2.Designer.cs",
+              "RelativeToolTip": "Formulario\\Form2.Designer.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAYwBMAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T19:21:19.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\Formulario\\Form2.cs",
+              "RelativeDocumentMoniker": "Formulario\\Form2.cs",
+              "ToolTip": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\Formulario\\Form2.cs",
+              "RelativeToolTip": "Formulario\\Form2.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAIAwwD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T19:14:23.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form2.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\Formulario\\Form2.cs",
+              "RelativeDocumentMoniker": "Formulario\\Form2.cs",
+              "ToolTip": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\Formulario\\Form2.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Formulario\\Form2.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T19:08:07.778Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\Formulario\\Form1.cs",
+              "RelativeDocumentMoniker": "Formulario\\Form1.cs",
+              "ToolTip": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\Formulario\\Form1.cs",
+              "RelativeToolTip": "Formulario\\Form1.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAYwDAAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T18:59:38.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\Formulario\\Form1.cs",
+              "RelativeDocumentMoniker": "Formulario\\Form1.cs",
+              "ToolTip": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\Formulario\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Formulario\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T18:41:30.554Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

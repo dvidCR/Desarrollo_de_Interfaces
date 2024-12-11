@@ -1,0 +1,10 @@
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\InterfazLimpiaClase\InterfazLimpiaClase\bin\Debug\InterfazLimpiaClase.exe.config
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\InterfazLimpiaClase\InterfazLimpiaClase\bin\Debug\InterfazLimpiaClase.exe
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\InterfazLimpiaClase\InterfazLimpiaClase\bin\Debug\InterfazLimpiaClase.pdb
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\InterfazLimpiaClase\InterfazLimpiaClase\obj\Debug\InterfazLimpiaClase.csproj.AssemblyReference.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\InterfazLimpiaClase\InterfazLimpiaClase\obj\Debug\InterfazLimpiaClase.Form1.resources
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\InterfazLimpiaClase\InterfazLimpiaClase\obj\Debug\InterfazLimpiaClase.Properties.Resources.resources
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\InterfazLimpiaClase\InterfazLimpiaClase\obj\Debug\InterfazLimpiaClase.csproj.GenerateResource.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\InterfazLimpiaClase\InterfazLimpiaClase\obj\Debug\InterfazLimpiaClase.csproj.CoreCompileInputs.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\InterfazLimpiaClase\InterfazLimpiaClase\obj\Debug\InterfazLimpiaClase.exe
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\InterfazLimpiaClase\InterfazLimpiaClase\obj\Debug\InterfazLimpiaClase.pdb

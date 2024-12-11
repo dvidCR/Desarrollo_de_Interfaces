@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\InterfazLimpiaClase\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC6259A-C569-4A99-B94D-068ECFA9ADDB}|InterfazLimpiaClase\\InterfazLimpiaClase.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\interfazlimpiaclase\\interfazlimpiaclase\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC6259A-C569-4A99-B94D-068ECFA9ADDB}|InterfazLimpiaClase\\InterfazLimpiaClase.csproj|solutionrelative:interfazlimpiaclase\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC6259A-C569-4A99-B94D-068ECFA9ADDB}|InterfazLimpiaClase\\InterfazLimpiaClase.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\interfazlimpiaclase\\interfazlimpiaclase\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8DC6259A-C569-4A99-B94D-068ECFA9ADDB}|InterfazLimpiaClase\\InterfazLimpiaClase.csproj|solutionrelative:interfazlimpiaclase\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC6259A-C569-4A99-B94D-068ECFA9ADDB}|InterfazLimpiaClase\\InterfazLimpiaClase.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\interfazlimpiaclase\\interfazlimpiaclase\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DC6259A-C569-4A99-B94D-068ECFA9ADDB}|InterfazLimpiaClase\\InterfazLimpiaClase.csproj|solutionrelative:interfazlimpiaclase\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\InterfazLimpiaClase\\InterfazLimpiaClase\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "InterfazLimpiaClase\\Form1.Designer.cs",
+              "ToolTip": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\InterfazLimpiaClase\\InterfazLimpiaClase\\Form1.Designer.cs",
+              "RelativeToolTip": "InterfazLimpiaClase\\Form1.Designer.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAWwD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T19:04:45.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\InterfazLimpiaClase\\InterfazLimpiaClase\\Form1.cs",
+              "RelativeDocumentMoniker": "InterfazLimpiaClase\\Form1.cs",
+              "ToolTip": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\InterfazLimpiaClase\\InterfazLimpiaClase\\Form1.cs",
+              "RelativeToolTip": "InterfazLimpiaClase\\Form1.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAIAwwFAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T17:58:49.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\InterfazLimpiaClase\\InterfazLimpiaClase\\Form1.cs",
+              "RelativeDocumentMoniker": "InterfazLimpiaClase\\Form1.cs",
+              "ToolTip": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\InterfazLimpiaClase\\InterfazLimpiaClase\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "InterfazLimpiaClase\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T17:41:27.095Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

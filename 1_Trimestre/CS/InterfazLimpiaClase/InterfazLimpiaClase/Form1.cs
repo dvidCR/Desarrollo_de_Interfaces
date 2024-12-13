@@ -77,7 +77,7 @@ namespace InterfazLimpiaClase
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            AbrirFormularioEnPanel(new Form1());
+            AbrirFormularioEnPanel(new Form2());
         }
     }
 }

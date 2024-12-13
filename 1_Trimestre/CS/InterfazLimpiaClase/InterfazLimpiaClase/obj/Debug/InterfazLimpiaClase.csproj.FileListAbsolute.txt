@@ -8,3 +8,4 @@ C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\InterfazLimpiaClase\InterfazLim
 C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\InterfazLimpiaClase\InterfazLimpiaClase\obj\Debug\InterfazLimpiaClase.csproj.CoreCompileInputs.cache
 C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\InterfazLimpiaClase\InterfazLimpiaClase\obj\Debug\InterfazLimpiaClase.exe
 C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\InterfazLimpiaClase\InterfazLimpiaClase\obj\Debug\InterfazLimpiaClase.pdb
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\InterfazLimpiaClase\InterfazLimpiaClase\obj\Debug\InterfazLimpiaClase.Form2.resources

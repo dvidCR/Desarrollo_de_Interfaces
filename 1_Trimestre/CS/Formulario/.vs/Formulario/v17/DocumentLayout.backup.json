@@ -7,19 +7,19 @@
       "RelativeMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|solutionrelative:formulario\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\formulario\\formulario\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\formulario\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|solutionrelative:formulario\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\formulario\\formulario\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\formulario\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|solutionrelative:formulario\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\formulario\\formulario\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\formulario\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|solutionrelative:formulario\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|c:\\clase\\desarrollo_de_interfaces\\1_trimestre\\cs\\formulario\\formulario\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\formulario\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{76B0F537-3BCE-45C4-9D38-897C6DFC6425}|Formulario\\Formulario.csproj|solutionrelative:formulario\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -42,8 +42,7 @@
               "RelativeToolTip": "Formulario\\Form2.Designer.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAYwBMAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T19:21:19.572Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T19:21:19.572Z"
             },
             {
               "$type": "Document",
@@ -55,8 +54,7 @@
               "RelativeToolTip": "Formulario\\Form2.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAIAwwD4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T19:14:23.547Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T19:14:23.547Z"
             },
             {
               "$type": "Document",
@@ -67,8 +65,7 @@
               "ToolTip": "C:\\Clase\\Desarrollo_de_Interfaces\\1_Trimestre\\CS\\Formulario\\Formulario\\Form2.cs [Dise\u00F1o]",
               "RelativeToolTip": "Formulario\\Form2.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T19:08:07.778Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-11-28T19:08:07.778Z"
             },
             {
               "$type": "Document",

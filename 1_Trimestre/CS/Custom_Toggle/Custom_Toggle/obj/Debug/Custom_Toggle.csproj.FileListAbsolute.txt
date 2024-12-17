@@ -1,0 +1,10 @@
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Toggle\Custom_Toggle\bin\Debug\Custom_Toggle.exe.config
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Toggle\Custom_Toggle\bin\Debug\Custom_Toggle.exe
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Toggle\Custom_Toggle\bin\Debug\Custom_Toggle.pdb
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Toggle\Custom_Toggle\obj\Debug\Custom_Toggle.csproj.AssemblyReference.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Toggle\Custom_Toggle\obj\Debug\Custom_Toggle.Properties.Resources.resources
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Toggle\Custom_Toggle\obj\Debug\Custom_Toggle.csproj.GenerateResource.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Toggle\Custom_Toggle\obj\Debug\Custom_Toggle.csproj.CoreCompileInputs.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Toggle\Custom_Toggle\obj\Debug\Custom_Toggle.exe
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Toggle\Custom_Toggle\obj\Debug\Custom_Toggle.pdb
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Toggle\Custom_Toggle\obj\Debug\Custom_Toggle.Form1.resources

@@ -1,0 +1,10 @@
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Control\Custom_Control\bin\Debug\Custom_Control.exe.config
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Control\Custom_Control\bin\Debug\Custom_Control.exe
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Control\Custom_Control\bin\Debug\Custom_Control.pdb
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Control\Custom_Control\obj\Debug\Custom_Control.csproj.AssemblyReference.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Control\Custom_Control\obj\Debug\Custom_Control.Properties.Resources.resources
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Control\Custom_Control\obj\Debug\Custom_Control.csproj.GenerateResource.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Control\Custom_Control\obj\Debug\Custom_Control.csproj.CoreCompileInputs.cache
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Control\Custom_Control\obj\Debug\Custom_Control.exe
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Control\Custom_Control\obj\Debug\Custom_Control.pdb
+C:\Clase\Desarrollo_de_Interfaces\1_Trimestre\CS\Custom_Control\Custom_Control\obj\Debug\Custom_Control.Form1.resources
